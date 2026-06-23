@@ -35,7 +35,7 @@ function ServiceCard({ s, i }: { s: typeof services[0]; i: number }) {
       transition={{ duration: 0.7, ease: EASE, delay: i * 0.06 }}
       className="group relative bg-white cursor-pointer h-full flex flex-col"
     >
-      <div className="relative h-72 overflow-hidden">
+      <div className="relative h-52 sm:h-72 overflow-hidden">
         <img src={s.img} alt={s.title} className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#002318]/70 via-transparent to-transparent" />
         <div className="absolute top-4 left-4">
@@ -45,12 +45,12 @@ function ServiceCard({ s, i }: { s: typeof services[0]; i: number }) {
           {s.icon}
         </div>
       </div>
-      <div className="flex-1 p-6 flex flex-col justify-between">
+      <div className="flex-1 p-5 sm:p-6 flex flex-col justify-between">
         <div>
-          <h3 className="font-display font-bold text-[16px] text-foreground mb-3">{s.title}</h3>
-          <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+          <h3 className="font-display font-bold text-[15px] sm:text-[16px] text-foreground mb-2 sm:mb-3">{s.title}</h3>
+          <p className="text-[12px] sm:text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
         </div>
-        <div className="mt-5 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground/60 group-hover:text-brass group-hover:gap-3 transition-all duration-300 self-start px-3 py-1.5 -ml-3 -mt-1.5 rounded-full border border-transparent group-hover:border-brass/50 transition-[color,gap,border-color] duration-500 ease-out">
+        <div className="mt-4 sm:mt-5 inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.2em] text-muted-foreground/60 group-hover:text-brass group-hover:gap-3 transition-all duration-300 self-start px-3 py-1.5 -ml-3 -mt-1.5 rounded-full border border-transparent group-hover:border-brass/50 transition-[color,gap,border-color] duration-500 ease-out">
           Explore <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </div>
       </div>
@@ -68,19 +68,19 @@ function CTACard({ i }: { i: number }) {
       initial={{ opacity: 0, y: 40 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, ease: EASE, delay: i * 0.06 }}
-      className="group relative bg-[#002318] flex flex-col items-start justify-center text-left p-10 min-h-[380px] h-full"
+      className="group relative bg-[#002318] flex flex-col items-start justify-center text-left p-6 sm:p-10 min-h-[300px] sm:min-h-[380px] h-full"
     >
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_30%,rgba(0,71,55,0.1),transparent)]" />
-      <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-white mb-5 relative">Need a Quote?</span>
-      <h3 className="font-display font-bold text-2xl text-white mb-4 relative leading-snug">
+      <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-white mb-4 sm:mb-5 relative">Need a Quote?</span>
+      <h3 className="font-display font-bold text-xl sm:text-2xl text-white mb-3 sm:mb-4 relative leading-snug">
         Tell us what<br />you need moved
       </h3>
-      <p className="text-sm text-white/40 leading-relaxed mb-8 max-w-[220px] relative">
+      <p className="text-[13px] sm:text-sm text-white/40 leading-relaxed mb-6 sm:mb-8 max-w-[220px] relative">
         Get a personalized freight plan and pricing within hours — tailored to your cargo, route, and timeline.
       </p>
       <a
         href="#contact"
-        className="group/btn inline-flex items-center gap-2.5 bg-[#55ed9d] text-[#004737] px-7 py-3.5 text-[11px] font-bold tracking-[0.2em] uppercase rounded-full hover:bg-[#55ed9d]/80 transition-all duration-300 relative"
+        className="group/btn inline-flex items-center gap-2.5 bg-[#55ed9d] text-[#004737] px-6 sm:px-7 py-3 sm:py-3.5 text-[11px] font-bold tracking-[0.2em] uppercase rounded-full hover:bg-[#55ed9d]/80 transition-all duration-300 relative"
       >
         Request a Quote
         <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/btn:translate-x-0.5" />
@@ -97,8 +97,8 @@ export default function ServicesSection() {
 
   return (
     <section id="services" ref={ref} className="bg-surface border-t border-border">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-6">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 sm:py-24 lg:py-32">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-10 sm:mb-16 gap-4 sm:gap-6">
           <div>
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -113,7 +113,7 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: EASE, delay: 0.05 }}
-              className="text-4xl lg:text-5xl font-display font-bold tracking-tight leading-[1.0] text-foreground"
+              className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight leading-[1.0] text-foreground"
             >
               End-to-End
             </motion.h2>
@@ -121,7 +121,7 @@ export default function ServicesSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, ease: EASE, delay: 0.1 }}
-              className="text-4xl lg:text-5xl font-display font-bold tracking-tight leading-[1.0] text-[#004737]/50"
+              className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold tracking-tight leading-[1.0] text-[#004737]/50"
             >
               Orchestration.
             </motion.h2>
@@ -142,9 +142,9 @@ export default function ServicesSection() {
             const c = i % 3;
             return (
               <div
-                key={i}
-                className="relative min-h-[440px] group border border-border hover:border-brass transition-colors duration-300"
-              >
+              key={i}
+              className="relative min-h-[340px] sm:min-h-[440px] group border border-border hover:border-brass transition-colors duration-300"
+            >
                 <svg className="absolute z-20 -top-[3.5px] -left-[3.5px]" width="5" height="5" viewBox="0 0 5 5">
                   <circle cx="2.5" cy="2.5" r="2.5" fill="#004737" />
                 </svg>

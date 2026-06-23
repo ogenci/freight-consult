@@ -9,11 +9,11 @@ export default function FooterSection() {
       <div className="absolute right-0 bottom-12 text-[280px] font-display font-bold text-[#002318]/[0.06] leading-none select-none pointer-events-none">
         FC
       </div>
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-28 pb-12">
-        <div className="grid lg:grid-cols-[1.8fr_1fr_1fr_1.2fr] gap-16 mb-16">
-          <div>
-            <img src={logoPath} alt="Freight Consult" className="h-9 w-auto mb-6 brightness-0" />
-            <p className="text-sm text-[#002318] leading-relaxed mb-8 max-w-xs font-light">
+      <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-20 sm:pt-28 pb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1.2fr] gap-10 sm:gap-12 lg:gap-16 mb-12 sm:mb-16">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <img src={logoPath} alt="Freight Consult" className="h-8 sm:h-9 w-auto mb-5 sm:mb-6 brightness-0" />
+            <p className="text-sm text-[#002318] leading-relaxed mb-6 sm:mb-8 max-w-xs font-light">
               Africa's leading freight forwarding and logistics company. Primary Agent for PSA BDP Global network in Ghana. Est. 2006.
             </p>
             <div className="flex gap-3">
