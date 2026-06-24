@@ -72,10 +72,10 @@ export function AboutSection() {
   const ref = useRef<HTMLElement>(null);
 
   return (
-    <section id="about" ref={ref} className="relative overflow-hidden bg-background border-t border-border py-24 lg:py-32">
+    <section id="about" ref={ref} className="relative overflow-hidden bg-background border-t border-border py-20 sm:py-24 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-6">
-          <div className="relative overflow-hidden rounded-2xl min-h-[320px] lg:min-h-[520px] row-span-2 img-hover-zoom">
+          <div className="relative overflow-hidden rounded-2xl min-h-[240px] sm:min-h-[320px] lg:min-h-[520px] lg:row-span-2 img-hover-zoom">
             <motion.img
               src={teamOfficeImg} alt="Freight Consult team"
               className="absolute inset-0 w-full h-full object-cover"
@@ -88,49 +88,49 @@ export function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.6, ease: EASE }}
-              className="absolute bottom-6 left-6 right-6 bg-[#002318]/90 backdrop-blur-sm p-5 rounded-xl border border-white/10"
+              className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 bg-[#002318]/90 backdrop-blur-sm p-4 sm:p-5 rounded-xl border border-white/10"
             >
-              <div className="text-lg font-display font-bold text-white mb-0.5">PSA BDP</div>
-              <div className="text-[14px] leading-relaxed text-white/70">Primary Agent for the PSA BDP Global Logistics Network in Ghana</div>
+              <div className="text-base sm:text-lg font-display font-bold text-white mb-0.5">PSA BDP</div>
+              <div className="text-[13px] sm:text-[14px] leading-relaxed text-white/70">Primary Agent for the PSA BDP Global Logistics Network in Ghana</div>
             </motion.div>
           </div>
 
-          <div className="flex flex-col justify-center bg-white border border-border rounded-2xl p-8 lg:p-10">
+          <div className="flex flex-col justify-center bg-white border border-border rounded-2xl p-6 sm:p-8 lg:p-10">
             <Reveal>
               <SectionLabel>The Freight Consult Advantage</SectionLabel>
               <div className="overflow-hidden mb-1">
-                <motion.h2 variants={clipReveal} custom={0.05} className="text-3xl lg:text-4xl font-display font-bold leading-[1.0] tracking-tight text-foreground">
+                <motion.h2 variants={clipReveal} custom={0.05} className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold leading-[1.0] tracking-tight text-foreground">
                   When Failure Is
                 </motion.h2>
               </div>
-              <div className="overflow-hidden mb-6">
-                <motion.h2 variants={clipReveal} custom={0.12} className="text-3xl lg:text-4xl font-display font-bold leading-[1.0] tracking-tight text-brass">
+              <div className="overflow-hidden mb-4 sm:mb-6">
+                <motion.h2 variants={clipReveal} custom={0.12} className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold leading-[1.0] tracking-tight text-brass">
                   Not an Option.
                 </motion.h2>
               </div>
-              <motion.p variants={fadeUp} custom={0.18} className="text-muted-foreground leading-relaxed text-[14px]">
+              <motion.p variants={fadeUp} custom={0.18} className="text-muted-foreground leading-relaxed text-[13px] sm:text-[14px]">
                 Supply chains in Africa present unique challenges — delays, compliance hurdles, infrastructural bottlenecks. For 20 years, we haven't just navigated these; we've conquered them.
               </motion.p>
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-[1fr_auto] gap-6">
-            <div className="bg-[#002318] rounded-2xl p-8 lg:p-10 flex flex-col justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-4 sm:gap-6">
+            <div className="bg-[#002318] rounded-2xl p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
               <Reveal>
-                <motion.p variants={fadeUp} custom={0.1} className="text-white/60 leading-relaxed text-[14px]">
+                <motion.p variants={fadeUp} custom={0.1} className="text-white/60 leading-relaxed text-[13px] sm:text-[14px]">
                   From conflict zones in Mali and Niger, to orchestrating COVID-19 critical supply chains and managing complex military logistics. We bring elite global standards to local execution.
                 </motion.p>
               </Reveal>
             </div>
-            <div className="bg-white border border-border rounded-2xl p-8 lg:p-10 flex flex-col justify-center min-w-[180px]">
+            <div className="bg-white border border-border rounded-2xl p-6 sm:p-8 lg:p-10 flex flex-col justify-center">
               <Reveal>
-                <motion.div variants={fadeUp} custom={0.1} className="text-center space-y-7">
+                <motion.div variants={fadeUp} custom={0.1} className="flex sm:block justify-center gap-10 sm:gap-0 sm:text-center sm:space-y-7">
                   {[
                     { v: "2006", l: "Founded" },
                     { v: "24/7", l: "Availability" },
                   ].map((s, i) => (
                     <div key={s.l}>
-                      <div className="text-3xl font-display font-bold text-[#002318]">{s.v}</div>
+                      <div className="text-2xl sm:text-3xl font-display font-bold text-[#002318]">{s.v}</div>
                       <div className="text-[10px] font-semibold tracking-[0.25em] uppercase text-muted-foreground mt-1">{s.l}</div>
                     </div>
                   ))}
