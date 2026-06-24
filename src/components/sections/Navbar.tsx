@@ -12,18 +12,6 @@ const links = [
   { label: "Contact", href: "#contact" },
 ];
 
-const overlayVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.35, ease: EASE } },
-  exit: { opacity: 0, transition: { duration: 0.25, ease: EASE } },
-};
-
-const linkVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: (i: number) => ({ opacity: 1, y: 0, transition: { duration: 0.45, ease: EASE, delay: 0.08 + i * 0.05 } }),
-  exit: { opacity: 0, y: -12, transition: { duration: 0.2, ease: EASE } },
-};
-
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -104,38 +92,34 @@ export default function Navbar() {
         {open && (
           <motion.div
             key="overlay"
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            variants={overlayVariants}
-            className="fixed inset-0 z-40 bg-[#002318]/95 backdrop-blur-3xl flex flex-col items-center justify-center gap-2"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3, ease: EASE }}
+            className="fixed inset-0 z-40 bg-[#002318] flex flex-col items-center justify-center px-6"
           >
-            <button
-              onClick={() => setOpen(false)}
-              className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-white/50 hover:text-white transition-colors"
-              aria-label="Close menu"
-            >
-              <X className="w-6 h-6" />
-            </button>
-
             {links.map((l, i) => (
               <motion.a
                 key={l.href}
                 href={l.href}
-                custom={i}
-                variants={linkVariants}
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.4, ease: EASE, delay: i * 0.06 }}
                 onClick={() => setOpen(false)}
-                className="text-3xl md:text-4xl font-display font-bold text-white/80 hover:text-[#55ed9d] transition-colors py-2"
+                className="text-3xl font-display font-bold text-white/80 hover:text-[#55ed9d] transition-colors py-3 w-full max-w-xs text-center"
               >
                 {l.label}
               </motion.a>
             ))}
             <motion.a
               href="#contact"
-              custom={links.length}
-              variants={linkVariants}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -12 }}
+              transition={{ duration: 0.4, ease: EASE, delay: 0.3 }}
               onClick={() => setOpen(false)}
-              className="mt-8 group inline-flex items-center gap-2.5 bg-[#55ed9d] text-[#004737] px-8 py-4 font-bold text-sm tracking-widest uppercase rounded-full hover:bg-[#55ed9d]/80 transition-colors"
+              className="mt-10 group inline-flex items-center gap-2.5 bg-[#55ed9d] text-[#004737] px-8 py-4 font-bold text-sm tracking-widest uppercase rounded-full hover:bg-[#55ed9d]/80 transition-colors"
             >
               Get a Quote
               <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
