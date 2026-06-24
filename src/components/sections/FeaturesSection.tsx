@@ -648,10 +648,7 @@ export function FeaturedProjectSection() {
     <section ref={ref} className="bg-[#faf8f5] border-t border-border/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 sm:py-24 lg:py-32">
         <Reveal className="mb-10 sm:mb-16">
-          <div className="flex items-center gap-4 mb-6">
-            <div className="w-8 h-px bg-brass/50" />
-            <SectionLabel>Featured Project</SectionLabel>
-          </div>
+          <SectionLabel>Featured Project</SectionLabel>
           <div className="overflow-hidden mb-1">
             <motion.h2 variants={clipReveal} custom={0.05} className="text-3xl sm:text-4xl lg:text-6xl font-display font-bold tracking-tight text-foreground leading-[1.05]">Mission-Critical</motion.h2>
           </div>
