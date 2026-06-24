@@ -646,17 +646,17 @@ export function FeaturedProjectSection() {
 
   return (
     <section ref={ref} className="bg-[#faf8f5] border-t border-border/30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
-        <Reveal className="mb-16">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 sm:py-24 lg:py-32">
+        <Reveal className="mb-10 sm:mb-16">
           <div className="flex items-center gap-4 mb-6">
             <div className="w-8 h-px bg-brass/50" />
             <SectionLabel>Featured Project</SectionLabel>
           </div>
           <div className="overflow-hidden mb-1">
-            <motion.h2 variants={clipReveal} custom={0.05} className="text-4xl lg:text-6xl font-display font-bold tracking-tight text-foreground leading-[1.05]">Mission-Critical</motion.h2>
+            <motion.h2 variants={clipReveal} custom={0.05} className="text-3xl sm:text-4xl lg:text-6xl font-display font-bold tracking-tight text-foreground leading-[1.05]">Mission-Critical</motion.h2>
           </div>
           <div className="overflow-hidden">
-            <motion.h2 variants={clipReveal} custom={0.12} className="text-4xl lg:text-6xl font-display font-bold tracking-tight text-[#004737]/40 leading-[1.05]">By Design.</motion.h2>
+            <motion.h2 variants={clipReveal} custom={0.12} className="text-3xl sm:text-4xl lg:text-6xl font-display font-bold tracking-tight text-[#004737]/40 leading-[1.05]">By Design.</motion.h2>
           </div>
         </Reveal>
 
@@ -664,11 +664,11 @@ export function FeaturedProjectSection() {
           initial={{ opacity: 0, y: 40 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.9, ease: EASE }}
-          className="grid lg:grid-cols-5 gap-0 lg:gap-10 items-start"
+          className="grid lg:grid-cols-5 gap-6 lg:gap-10 items-start"
         >
           <div className="lg:col-span-2 relative">
             <div className="relative rounded-xl overflow-hidden bg-[#002318]">
-              <img src={cargoAircraftImg} alt="" aria-hidden className="w-full h-72 lg:h-full lg:min-h-[420px] object-cover" />
+              <img src={cargoAircraftImg} alt="" aria-hidden className="w-full h-56 sm:h-72 lg:h-full lg:min-h-[420px] object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#002318]/60 via-transparent to-transparent" />
             </div>
             <div className="hidden lg:block absolute -bottom-4 -right-4 w-24 h-24 border border-brass/20 rounded-xl bg-white/80 backdrop-blur-sm flex items-center justify-center">
@@ -679,40 +679,40 @@ export function FeaturedProjectSection() {
             </div>
           </div>
 
-          <div className="lg:col-span-3 mt-6 lg:mt-0">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brass/8 border border-brass/15 text-[10px] font-bold tracking-[0.25em] uppercase text-brass/80 mb-6">
+          <div className="lg:col-span-3">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-brass/8 border border-brass/15 text-[10px] font-bold tracking-[0.25em] uppercase text-brass/80 mb-4 sm:mb-6">
               <div className="w-1.5 h-1.5 rounded-full bg-brass/50" />
               Cold Chain Logistics
             </div>
 
-            <h3 className="text-xl lg:text-3xl font-display font-bold text-foreground leading-tight mb-5 max-w-xl">
+            <h3 className="text-lg sm:text-xl lg:text-3xl font-display font-bold text-foreground leading-tight mb-4 sm:mb-5 max-w-xl">
               Maintaining cold chain integrity across 6 West African countries during peak season.
             </h3>
 
-            <p className="text-muted-foreground/70 text-sm leading-relaxed mb-10 max-w-lg">
+            <p className="text-muted-foreground/70 text-sm leading-relaxed mb-8 sm:mb-10 max-w-lg">
               Coca-Cola Beverages Africa trusted Freight Consult to orchestrate a synchronized cold chain operation spanning 6 countries, 12 warehouses, and 480 temperature-controlled shipments — with zero excursions.
             </p>
 
-            <div className="flex flex-wrap gap-8 lg:gap-12 mb-8">
+            <div className="flex flex-wrap gap-6 sm:gap-8 lg:gap-12 mb-6 sm:mb-8">
               {[
                 { v: "480", l: "Shipments" },
                 { v: "6", l: "Countries" },
                 { v: "0", l: "Temperature Excursions" },
               ].map((s) => (
                 <div key={s.l}>
-                  <div className="text-2xl lg:text-3xl font-display font-bold text-[#004737]">{s.v}</div>
-                  <div className="text-[9px] font-semibold tracking-[0.25em] uppercase text-muted-foreground/50 mt-1">{s.l}</div>
+                  <div className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-[#004737]">{s.v}</div>
+                  <div className="text-[8px] sm:text-[9px] font-semibold tracking-[0.25em] uppercase text-muted-foreground/50 mt-1">{s.l}</div>
                 </div>
               ))}
             </div>
 
-            <div className="flex items-center gap-5 pt-6 border-t border-border/50">
-              <div className="w-10 h-10 rounded-full bg-[#004737] flex items-center justify-center text-white font-display font-bold text-xs">CB</div>
-              <div>
-                <div className="text-sm font-display font-semibold text-foreground">Coca-Cola Beverages Africa</div>
-                <div className="text-[9px] font-medium tracking-[0.2em] uppercase text-muted-foreground/60">Client since 2018</div>
+            <div className="flex items-center gap-3 sm:gap-5 pt-5 sm:pt-6 border-t border-border/50">
+              <div className="w-9 sm:w-10 h-9 sm:h-10 rounded-full bg-[#004737] flex items-center justify-center text-white font-display font-bold text-xs">CB</div>
+              <div className="min-w-0">
+                <div className="text-[13px] sm:text-sm font-display font-semibold text-foreground">Coca-Cola Beverages Africa</div>
+                <div className="text-[8px] sm:text-[9px] font-medium tracking-[0.2em] uppercase text-muted-foreground/60">Client since 2018</div>
               </div>
-              <div className="hidden sm:flex items-center gap-1 ml-auto">
+              <div className="hidden sm:flex items-center gap-1 ml-auto shrink-0">
                 {[1,2,3,4,5].map((n) => (
                   <Star key={n} className="w-3 h-3 fill-[#004737]/15 text-[#004737]/10" />
                 ))}
