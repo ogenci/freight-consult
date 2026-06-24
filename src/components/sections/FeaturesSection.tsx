@@ -373,10 +373,8 @@ export function AccreditationsSection() {
   return (
     <section ref={ref} className="bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 py-24 lg:py-32">
-        <Reveal className="text-center mb-16">
-          <div className="flex justify-center">
-            <SectionLabel>Globally Recognised</SectionLabel>
-          </div>
+        <Reveal className="mb-16">
+          <SectionLabel>Globally Recognised</SectionLabel>
           <div className="overflow-hidden mb-1">
             <motion.h2 variants={clipReveal} custom={0.05} className="text-4xl lg:text-6xl font-display font-bold tracking-tight text-foreground">
               Accreditations &amp;
@@ -387,7 +385,7 @@ export function AccreditationsSection() {
               Memberships.
             </motion.h2>
           </div>
-          <motion.p variants={fadeUp} custom={0.18} className="text-muted-foreground max-w-xl mx-auto text-sm leading-relaxed">
+          <motion.p variants={fadeUp} custom={0.18} className="text-muted-foreground max-w-xl text-sm leading-relaxed">
             Our credentials aren't just plaques on a wall — they represent the rigorous global standards we hold ourselves to on every single shipment.
           </motion.p>
         </Reveal>
