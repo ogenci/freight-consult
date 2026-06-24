@@ -41,7 +41,7 @@ export default function Navbar() {
           }`}
           style={{ borderRadius: "9999px" }}
         >
-          <div className="flex items-center px-3 md:px-5 h-12 md:h-14 min-w-0 md:min-w-[816px] w-auto mx-2 sm:mx-0 gap-4">
+          <div className="flex items-center px-3 md:px-5 h-12 md:h-14 w-[90%] md:w-auto md:min-w-[816px] mx-auto gap-4">
             <a href="#" className="flex items-center shrink-0">
               <img src={logoPath} alt="Freight Consult" className="h-5 md:h-6 w-auto brightness-0 invert" />
             </a>
