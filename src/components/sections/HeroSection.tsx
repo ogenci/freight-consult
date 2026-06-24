@@ -1,5 +1,4 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import portContainersImg from "@/assets/images/port-containers.png";
 
@@ -21,17 +20,12 @@ const clipReveal = {
 };
 
 export default function HeroSection() {
-  const ref = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const bgY = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
-  const fade = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
-
   return (
-    <section ref={ref} className="relative min-h-[100dvh] flex flex-col justify-end overflow-hidden bg-[#002318]">
-      <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
-        <img src={portContainersImg} alt="" aria-hidden className="w-full h-[115%] object-cover object-center opacity-60" />
-      </motion.div>
-      <div className="absolute inset-0 z-[1] bg-[#002318]/50" />
+    <section className="relative min-h-screen flex flex-col justify-end overflow-hidden">
+      <div className="fixed inset-0 bg-[#002318]">
+        <img src={portContainersImg} alt="" aria-hidden className="w-full h-full object-cover opacity-60" />
+      </div>
+      <div className="absolute inset-0 bg-[#002318]/50" />
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -44,7 +38,7 @@ export default function HeroSection() {
         <span className="text-[9px] font-semibold tracking-[0.25em] uppercase text-white/70">Ghana · Africa · Global</span>
       </motion.div>
 
-      <motion.div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pb-24 sm:pb-20 lg:pb-28" style={{ opacity: fade }}>
+      <motion.div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pb-16 sm:pb-20 lg:pb-28">
         <motion.div initial="hidden" animate="visible" variants={stagger}>
           <motion.div variants={fadeUp} custom={0.1} className="flex items-center gap-3 mb-6 sm:mb-8">
             <div className="w-8 sm:w-10 h-[2px] bg-white/60 rounded-full" />
@@ -53,14 +47,14 @@ export default function HeroSection() {
 
           <div className="overflow-hidden mb-1">
             <motion.h1 variants={clipReveal} custom={0.15}
-              className="text-[clamp(2.8rem,7vw,5.5rem)] font-display font-bold leading-[0.92] tracking-[-0.03em] text-white"
+              className="text-[clamp(2.2rem,6.5vw,5.5rem)] font-display font-bold leading-[0.92] tracking-[-0.03em] text-white"
             >
               We Move Africa's
             </motion.h1>
           </div>
           <div className="overflow-hidden mb-8">
             <motion.h1 variants={clipReveal} custom={0.28}
-              className="text-[clamp(2.8rem,7vw,5.5rem)] font-display font-bold leading-[0.92] tracking-[-0.03em]"
+              className="text-[clamp(2.2rem,6.5vw,5.5rem)] font-display font-bold leading-[0.92] tracking-[-0.03em]"
             >
               <span className="text-white">Most </span>
               <span className="text-[#55ed9d]">Critical</span>
@@ -106,9 +100,9 @@ export default function HeroSection() {
             { v: "7", l: "Global Offices" },
             { v: "99.8%", l: "On-Time Delivery" },
           ].map((s) => (
-            <div key={s.l} className="py-5 px-3 sm:py-4 sm:px-4 lg:px-10 text-center">
-              <div className="text-xl sm:text-2xl font-display font-bold text-white">{s.v}</div>
-              <div className="text-[9px] sm:text-[10px] font-semibold tracking-[0.25em] uppercase text-white/60 mt-0.5">{s.l}</div>
+            <div key={s.l} className="py-2 px-1 sm:py-4 sm:px-4 lg:px-10 text-center">
+              <div className="text-base sm:text-2xl font-display font-bold text-white">{s.v}</div>
+              <div className="text-[8px] sm:text-[10px] font-semibold tracking-[0.25em] uppercase text-white/60 mt-0.5">{s.l}</div>
             </div>
           ))}
         </div>

@@ -8,7 +8,7 @@ const clients = [
 
 export default function TrustBar() {
   return (
-    <div className="bg-surface-elevated border-b border-border overflow-hidden py-[18px]">
+    <div className="bg-white border-b border-border overflow-hidden py-[14px] sm:py-[18px]">
       <div className="flex items-center">
         <div className="shrink-0 pl-6 pr-8 border-r border-border">
           <span className="text-[11px] font-bold tracking-[0.3em] uppercase text-foreground/80 whitespace-nowrap">Trusted By</span>
