@@ -10,8 +10,8 @@ export default function FooterSection() {
         FC
       </div>
       <div className="relative max-w-7xl mx-auto px-6 lg:px-12 pt-28 pb-12">
-        <div className="grid lg:grid-cols-[1.8fr_1fr_1fr_1.2fr] gap-16 mb-16">
-          <div>
+        <div className="grid grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1.2fr] gap-12 sm:gap-16 mb-16">
+          <div className="col-span-2 lg:col-span-1">
             <img src={logoPath} alt="Freight Consult" className="h-9 w-auto mb-6 brightness-0" />
             <p className="text-sm text-[#002318] leading-relaxed mb-8 max-w-xs font-light">
               Africa's leading freight forwarding and logistics company. Primary Agent for PSA BDP Global network in Ghana. Est. 2006.
@@ -34,7 +34,7 @@ export default function FooterSection() {
             </div>
           </div>
 
-          <div>
+          <div className="col-span-1 lg:col-span-1">
             <h4 className="text-[10px] font-bold tracking-[0.35em] uppercase text-[#002318] mb-6">Services</h4>
             <ul className="space-y-3">
               {["Air Freight", "Ocean Freight", "Customs Brokerage", "Project Cargo", "Warehousing", "Ship Chandling"].map((l) => (
@@ -45,7 +45,7 @@ export default function FooterSection() {
             </ul>
           </div>
 
-          <div>
+          <div className="col-span-1 lg:col-span-1">
             <h4 className="text-[10px] font-bold tracking-[0.35em] uppercase text-[#002318] mb-6">Company</h4>
             <ul className="space-y-3">
               {["About Us", "Global Network", "FAQs", "Contact"].map((l) => (
@@ -56,7 +56,7 @@ export default function FooterSection() {
             </ul>
           </div>
 
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <h4 className="text-[10px] font-bold tracking-[0.35em] uppercase text-[#002318] mb-6">Contact</h4>
             <ul className="space-y-4">
               {[
