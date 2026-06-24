@@ -418,21 +418,21 @@ export function AccreditationsSection() {
 
         <Reveal className="mt-12">
           <motion.div variants={fadeUp} custom={0.1}
-            className="bg-[#002318] text-white p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-6 rounded-2xl"
+            className="bg-[#002318] text-white p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-5 sm:gap-6 rounded-2xl"
           >
             <div className="text-center lg:text-left">
-              <div className="text-[11px] font-semibold tracking-[0.3em] uppercase text-white/70 mb-2">Network Reach</div>
-              <div className="text-2xl font-display font-bold">Part of the PSA BDP Global Network</div>
+              <div className="text-[10px] sm:text-[11px] font-semibold tracking-[0.3em] uppercase text-white/70 mb-2">Network Reach</div>
+              <div className="text-lg sm:text-xl lg:text-2xl font-display font-bold">Part of the PSA BDP Global Network</div>
             </div>
-            <div className="flex gap-8 lg:gap-12 text-center">
+            <div className="flex gap-6 sm:gap-8 lg:gap-12 text-center">
               {[
                 { v: "140+", l: "Countries" },
                 { v: "300+", l: "Offices Worldwide" },
                 { v: "Tier 1", l: "Classification" },
               ].map((s) => (
                 <div key={s.l}>
-                  <div className="text-2xl font-display font-bold text-white">{s.v}</div>
-                  <div className="text-[10px] font-semibold tracking-[0.25em] uppercase text-white/60 mt-1">{s.l}</div>
+                  <div className="text-xl sm:text-2xl font-display font-bold text-white">{s.v}</div>
+                  <div className="text-[9px] sm:text-[10px] font-semibold tracking-[0.25em] uppercase text-white/60 mt-1">{s.l}</div>
                 </div>
               ))}
             </div>
