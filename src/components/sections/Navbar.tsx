@@ -48,7 +48,7 @@ export default function Navbar() {
               <img src={logoPath} alt="Freight Consult" className="h-5 md:h-6 w-auto brightness-0 invert" />
             </a>
 
-            <div className="hidden md:flex items-center gap-1 mx-auto">
+            <div className="hidden md:flex items-center gap-1 mx-4">
               {links.map((l) => (
                 <a
                   key={l.href}
