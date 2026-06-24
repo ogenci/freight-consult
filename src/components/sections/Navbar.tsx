@@ -7,9 +7,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 
 const links = [
   { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Capabilities", href: "#impact" },
-  { label: "Contact", href: "#contact" },
+  { label: "Insights", href: "#insights" },
 ];
 
 export default function Navbar() {
