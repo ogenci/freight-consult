@@ -6,12 +6,8 @@ import logoPath from "@/assets/freight-consult-logo.svg";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const links = [
-  { label: "Home", href: "#" },
-  { label: "Solutions", href: "#solutions" },
-  { label: "Projects", href: "#projects" },
-  { label: "About", href: "#about" },
+  { label: "Services", href: "#services" },
   { label: "Insights", href: "#insights" },
-  { label: "Connect", href: "#contact" },
 ];
 
 export default function Navbar() {
@@ -53,7 +49,7 @@ export default function Navbar() {
                 <a
                   key={l.href}
                   href={l.href}
-                  className="px-2.5 xl:px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.18em] uppercase text-white/60 hover:text-white transition-colors rounded-full hover:bg-white/5 border border-white/10"
+                  className="px-3.5 py-1.5 text-[11px] font-semibold tracking-[0.18em] uppercase text-white/60 hover:text-white transition-colors rounded-full hover:bg-white/5 border border-white/10"
                 >
                   {l.label}
                 </a>
@@ -119,7 +115,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
-              transition={{ duration: 0.4, ease: EASE, delay: 0.4 }}
+              transition={{ duration: 0.4, ease: EASE, delay: 0.3 }}
               onClick={() => setOpen(false)}
               className="mt-10 group inline-flex items-center gap-2.5 bg-[#55ed9d] text-[#004737] px-8 py-4 font-bold text-sm tracking-widest uppercase rounded-full hover:bg-[#55ed9d]/80 transition-colors"
             >
