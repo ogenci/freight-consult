@@ -34,14 +34,14 @@ export default function Navbar() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
-          className={`pointer-events-auto mt-4 md:mt-5 transition-all duration-500 border border-white/15 ${
+          className={`pointer-events-auto mt-4 md:mt-5 transition-all duration-500 border border-white/15 w-[90%] md:w-auto md:min-w-[816px] ${
             scrolled
               ? "bg-[#002318]/90 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,35,24,0.40)]"
               : "bg-[#002318]/70 backdrop-blur-lg"
           }`}
           style={{ borderRadius: "9999px" }}
         >
-          <div className="flex items-center px-3 md:px-5 h-12 md:h-14 w-[90%] md:w-auto md:min-w-[816px] mx-auto gap-4">
+          <div className="flex items-center px-3 md:px-5 h-12 md:h-14 w-full gap-4">
             <a href="#" className="flex items-center shrink-0">
               <img src={logoPath} alt="Freight Consult" className="h-5 md:h-6 w-auto brightness-0 invert" />
             </a>
