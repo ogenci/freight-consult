@@ -34,7 +34,7 @@ export default function Navbar() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6, ease: EASE, delay: 0.2 }}
-          className={`pointer-events-auto mt-4 md:mt-5 transition-all duration-500 border border-white/15 w-[90%] md:w-auto md:min-w-[816px] ${
+          className={`pointer-events-auto mt-4 md:mt-5 transition-all duration-500 border border-white/15 w-[calc(90vw-43px)] md:w-auto md:min-w-[816px] ${
             scrolled
               ? "bg-[#002318]/90 backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,35,24,0.40)]"
               : "bg-[#002318]/70 backdrop-blur-lg"
