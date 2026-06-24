@@ -44,7 +44,7 @@ export default function HeroSection() {
         <span className="text-[9px] font-semibold tracking-[0.25em] uppercase text-white/70">Ghana · Africa · Global</span>
       </motion.div>
 
-      <motion.div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pb-16 sm:pb-20 lg:pb-28" style={{ opacity: fade }}>
+      <motion.div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full pb-10 sm:pb-20 lg:pb-28" style={{ opacity: fade }}>
         <motion.div initial="hidden" animate="visible" variants={stagger}>
           <motion.div variants={fadeUp} custom={0.1} className="flex items-center gap-3 mb-6 sm:mb-8">
             <div className="w-8 sm:w-10 h-[2px] bg-white/60 rounded-full" />
