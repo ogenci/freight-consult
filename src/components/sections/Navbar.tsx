@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ArrowUpRight } from "lucide-react";
+import { X, ArrowUpRight, Menu } from "lucide-react";
 import logoPath from "@/assets/freight-consult-logo.svg";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -11,6 +11,18 @@ const links = [
   { label: "Capabilities", href: "#impact" },
   { label: "Contact", href: "#contact" },
 ];
+
+const overlayVariants = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.35, ease: EASE } },
+  exit: { opacity: 0, transition: { duration: 0.25, ease: EASE } },
+};
+
+const linkVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({ opacity: 1, y: 0, transition: { duration: 0.45, ease: EASE, delay: 0.08 + i * 0.05 } }),
+  exit: { opacity: 0, y: -12, transition: { duration: 0.2, ease: EASE } },
+};
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,7 +53,7 @@ export default function Navbar() {
           }`}
           style={{ borderRadius: "9999px" }}
         >
-          <div className="flex items-center px-3 md:px-5 h-12 md:h-14 min-w-[320px] md:min-w-[816px] gap-4">
+          <div className="flex items-center px-3 md:px-5 h-12 md:h-14 min-w-0 md:min-w-[816px] w-auto mx-2 sm:mx-0 gap-4">
             <a href="#" className="flex items-center shrink-0">
               <img src={logoPath} alt="Freight Consult" className="h-5 md:h-6 w-auto brightness-0 invert" />
             </a>
@@ -75,12 +87,13 @@ export default function Navbar() {
               aria-label={open ? "Close menu" : "Open menu"}
             >
               <motion.div
-                animate={open ? { rotate: 45 } : { rotate: 0 }}
-                className="absolute"
+                key={open ? "close" : "menu"}
+                initial={{ rotate: -90, opacity: 0 }}
+                animate={{ rotate: 0, opacity: 1 }}
+                exit={{ rotate: 90, opacity: 0 }}
+                transition={{ duration: 0.25, ease: EASE }}
               >
-                <span className={`block w-5 h-[1.5px] bg-current transition-all ${open ? "" : "-translate-y-[4px]"}`} />
-                <span className={`block w-5 h-[1.5px] bg-current mt-[4px] transition-all ${open ? "opacity-0" : ""}`} />
-                <span className={`block w-5 h-[1.5px] bg-current mt-[4px] transition-all ${open ? "-translate-y-[10px]" : ""}`} />
+                {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </motion.div>
             </button>
           </div>
@@ -90,33 +103,37 @@ export default function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, ease: EASE }}
+            key="overlay"
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            variants={overlayVariants}
             className="fixed inset-0 z-40 bg-[#002318]/95 backdrop-blur-3xl flex flex-col items-center justify-center gap-2"
           >
-            <img src={logoPath} alt="Freight Consult" className="h-6 w-auto brightness-0 invert opacity-40 absolute top-8 left-8" />
+            <button
+              onClick={() => setOpen(false)}
+              className="absolute top-6 right-6 w-10 h-10 flex items-center justify-center text-white/50 hover:text-white transition-colors"
+              aria-label="Close menu"
+            >
+              <X className="w-6 h-6" />
+            </button>
+
             {links.map((l, i) => (
               <motion.a
                 key={l.href}
                 href={l.href}
-                initial={{ opacity: 0, y: 32 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 16 }}
-                transition={{ duration: 0.4, ease: EASE, delay: i * 0.06 }}
+                custom={i}
+                variants={linkVariants}
                 onClick={() => setOpen(false)}
-                className="text-3xl md:text-4xl font-display font-bold text-white/80 hover:text-brass transition-colors py-2"
+                className="text-3xl md:text-4xl font-display font-bold text-white/80 hover:text-[#55ed9d] transition-colors py-2"
               >
                 {l.label}
               </motion.a>
             ))}
             <motion.a
               href="#contact"
-              initial={{ opacity: 0, y: 32 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 16 }}
-              transition={{ duration: 0.4, ease: EASE, delay: 0.3 }}
+              custom={links.length}
+              variants={linkVariants}
               onClick={() => setOpen(false)}
               className="mt-8 group inline-flex items-center gap-2.5 bg-[#55ed9d] text-[#004737] px-8 py-4 font-bold text-sm tracking-widest uppercase rounded-full hover:bg-[#55ed9d]/80 transition-colors"
             >
