@@ -27,7 +27,7 @@ export default function HeroSection() {
   const fade = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-[80dvh] sm:min-h-[100dvh] flex flex-col justify-end overflow-hidden bg-[#002318]">
+    <section ref={ref} className="relative min-h-[100dvh] flex flex-col justify-end overflow-hidden bg-[#002318]">
       <motion.div className="absolute inset-0 z-0" style={{ y: bgY }}>
         <img src={portContainersImg} alt="" aria-hidden className="w-full h-[115%] object-cover object-center opacity-60" />
       </motion.div>
